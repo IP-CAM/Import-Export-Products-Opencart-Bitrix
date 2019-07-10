@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog.php');
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog.php';
 
 use Bitrix\Main\Loader;
 
@@ -77,6 +77,7 @@ function addProduct(array $product)
 		'ACTIVE'             => 'Y',
 		'DETAIL_PICTURE'     => $mainPicture,
 		'PREVIEW_PICTURE'    => $mainPicture,
+		'XML_ID'             => $product['code'],
 		'PROPERTY_VALUES'    => [
 			'MORE_PHOTO' => $morePhoto,
 			690 => $product['name'],
